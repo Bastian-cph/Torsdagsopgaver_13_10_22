@@ -26,11 +26,11 @@ public class Game {
         /*TODO: tilføj en linie der minder om den lige oven over.
            Her skal der dog loades Chance-kort data istedet for felt data (jvf. Task 2.d)
          * */
-
+        String[] chanceData = fileIO.readChanceData();
 
 
         /*TODO: ændr dette konstruktor kald til Board, sådan at  Chance-kort data kommer med som argument (jvf. Task 2.d) */
-        board = new Board(fieldData);
+        board = new Board(fieldData, chanceData);
 
 
 

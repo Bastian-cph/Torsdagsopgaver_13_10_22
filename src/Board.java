@@ -6,14 +6,16 @@ public class Board {
 
     /*
     * TODO:
-    *   - udvid konstruktoren (jvf. Task 2.d)
     *   - tilføj statiske felter (jvf. Task 2.e, 2.f)
     *   - tilføj statisk metode (jvf. Task 2.g)
     *
     * */
+static ChanceCard[] chanceCards;
 
-    Board(String[] fielddata){
+
+    Board(String[] fielddata, String[] chanceData){
         createFields(fielddata);
+        createChanceCard(chanceData);
     }
 
     private Field[] createFields(String[] data){
@@ -65,6 +67,20 @@ public class Board {
         }
         return fields[id];
     }
+private void createChanceCard(String[] data)
+{
+    for(int i = 0; i < chanceCards.length; i++) {
+        String s = data[i];
+        String[] values = s.split(",");
 
+        String text = values[0];
+        int cost = Integer.parseInt(values[1]);
+        int income = Integer.parseInt(values[2]);
+
+        ChanceCard card = new ChanceCard(text, cost, income);
+
+        chanceCards[i] = card;
+    }
+}
 
 }

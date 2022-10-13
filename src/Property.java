@@ -3,7 +3,7 @@ public class Property extends Field{
     protected Player owner;
     protected String option;
 
-    boolean monpoly = false; // bruges i Plot.onLand() til at bestemme om der skal vises tilbud om at bygge
+    boolean monopoly = false; // bruges i Plot.onLand() til at bestemme om der skal vises tilbud om at bygge
 
     public Property(int id, String label, int cost, int income, int serieID) {
         super(id, label, cost, income);
@@ -40,7 +40,7 @@ public class Property extends Field{
 
             p.buy(this.cost);
             //save deed hos spilleren
-            //p.addDeed(this);
+            p.addDeed(this);
             this.owner = p;
 
         }else if(option.equals("payRent")){
